@@ -28,4 +28,13 @@ router.post("/", async (req, res) => {
     }
 });
 
+router.put("/:id", async (req, res) => {
+    try {
+        await updateItem(req.params.id, req.body);
+        res.send.json(req.body)
+    } catch (err) {
+        res.status(err?.status ?? 500).json(err);
+    }
+});
+
 module.exports = router;
