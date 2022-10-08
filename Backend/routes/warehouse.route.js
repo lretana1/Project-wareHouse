@@ -15,7 +15,7 @@ router.post("/", async (req, res) => {
         const warehouse = await createWarehouse(req.body);
         res.status(201).json(warehouse);
     } catch (err) {
-        res.status(err.status ?? 500).json(err);
+        res.status(err?.status ?? 500).json(err);
     }
 });
 
