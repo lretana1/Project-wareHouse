@@ -9,6 +9,9 @@ const cors = require("cors");
 app.use(express.json());// parses incoming JSON requests
 app.use(cors());//allows server to take requests.
 
+const itemRouter = require("./routes/item.route");
+app.use("/items", itemRouter);
+
 const connectToMongo = async (req, res) => {
     //attempt to connect to MongoDB
     try {
