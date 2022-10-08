@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { findAll, findById, deleteById, updateById, createItem }
+const { findAll, findById, deleteById, updateById, createItem } = require("../controllers/item.controller")
 const mongoose = require("mongoose");
 
 
@@ -18,3 +18,5 @@ router.get("/:id", async (req, res) => {
         res.status()
     }
 })
+
+module.exports = router;

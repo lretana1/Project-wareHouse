@@ -1,7 +1,7 @@
 const router = require("express").Router;
 const { findWarehouse, createWarehouse } = require("../controllers/warehouse.controller");
 
-router.length("/", async (req, res) => {
+router.get("/", async (req, res) => {
     try {
         const warehouse = await findWarehouse();
         res.status(200).json(warehouse);
