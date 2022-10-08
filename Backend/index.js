@@ -11,6 +11,8 @@ app.use(cors());//allows server to take requests.
 
 const itemRouter = require("./routes/item.route");
 app.use("/items", itemRouter);
+const warehouseRouter = require("./routes/warehouse.route");
+app.use("./warehouse", warehouseRouter);
 
 const connectToMongo = async (req, res) => {
     //attempt to connect to MongoDB
