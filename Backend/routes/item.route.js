@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { findAll, findById, deleteById, updateById, createItem } = require("../controllers/item.controller")
+const { findAll, findById, deleteById, updateItem, createItem } = require("../controllers/item.controller")
 const mongoose = require("mongoose");
 
 
@@ -17,6 +17,15 @@ router.get("/:id", async (req, res) => {
         console.log(err.message);
         res.status()
     }
-})
+});
+
+router.post("/", async (req, res) => {
+    try {
+        const item = await createItem(req.body);
+        res.status(201).json(item);
+    } catch (err) {
+        res.status(err?.status ?? 500).json(err);
+    }
+});
 
 module.exports = router;
