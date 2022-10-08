@@ -1,4 +1,4 @@
-const router = require("express").Router;
+const router = require("express").Router();
 const { findWarehouse, createWarehouse } = require("../controllers/warehouse.controller");
 
 router.get("/", async (req, res) => {
