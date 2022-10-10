@@ -3,10 +3,11 @@ const Schema = mongoose.Schema;
 
 const itemSchema = new Schema({
     name: String,
-    quantity: Number,
+    description: String,
     price: Number,
+    imgURL: String
 });
 
-const Item = mongoose.model('Item', itemSchema, 'Items');
+const Item = mongoose.model('Item', itemSchema, 'Item');
 
 module.exports = Item;
