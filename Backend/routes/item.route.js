@@ -40,7 +40,7 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
     try {
         await deleteById(req.params.id);
-        res.send("hello");
+        res.send("Successfully deleted!");
     } catch (err) {
         res.status(err?.status ?? 500).json(err)
     }
